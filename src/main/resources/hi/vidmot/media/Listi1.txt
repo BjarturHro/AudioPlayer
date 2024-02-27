@@ -1,3 +1,3 @@
-media/sample-3s.wav sample-3s 3000 media/mynd1.png
-media/sample-6s.wav sample-6s 6000 media/mynd2.png
-media/sample-15s.wav sample-15s 15000 media/mynd3.png
+media/sample-3s.wav sample-3s 3000 media/sun.png
+media/sample-6s.wav sample-6s 6000 media/earth.png
+media/sample-15s.wav sample-15s 15000 media/moon.png

@@ -1,0 +1,11 @@
+.heima-bakgrunnur {
+    -fx-background-color: linear-gradient(to top, #fd0404, #cfe609);
+}
+
+.listi-bakgrunnur {
+    -fx-background-color: white;
+}
+
+.transparent {
+    -fx-background-color: transparent;
+}

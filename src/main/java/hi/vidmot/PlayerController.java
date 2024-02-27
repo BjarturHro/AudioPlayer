@@ -11,12 +11,19 @@ import javafx.scene.control.Button;
 public class PlayerController {
     Askrifandi a = new Askrifandi();
     Lagalistar lagalistar = new Lagalistar();
+    private String[] myndir = new String[2];
 
     @FXML
     private Label fxStatus;
 
+    /**
+     * Frumstillir forritið
+     * Býr til fylki af myndum
+     */
     public void initialize() {
         fxStatus.setText("Staða: Ekki skráður inn");
+        myndir[0] = "media/sun.png";
+        myndir[1] = "media/moon.png";
     }
 
     /**
@@ -32,6 +39,6 @@ public class PlayerController {
     public void onVeljaLista(ActionEvent actionEvent){
         Button b = (Button) actionEvent.getSource();
         int i = GridPane.getColumnIndex(b);
-        ViewSwitcher.switchTo(View.LISTI, lagalistar.get(i));
+        ViewSwitcher.switchTo(View.LISTI, lagalistar.get(i), myndir[i]);
     }
 }
