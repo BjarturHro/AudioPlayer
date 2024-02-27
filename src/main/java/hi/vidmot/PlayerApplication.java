@@ -12,8 +12,8 @@ public class PlayerApplication extends Application {
     public void start(Stage stage) throws IOException {
 
         var scene = new Scene(new Pane());
-        ViewSwither.setScene(scene);
-        ViewSwither.swithTo(View.HEIMA);
+        ViewSwitcher.setScene(scene);
+        ViewSwitcher.switchTo(View.HEIMA);
         stage.setScene(scene);
         stage.show();
     }

@@ -24,6 +24,6 @@ public class PlayerController {
     public void onVeljaLista(ActionEvent actionEvent){
         Button b = (Button) actionEvent.getSource();
         int i = GridPane.getColumnIndex(b);
-        ViewSwither.swithTo(View.LISTI, lagalistar.get(i));
+        ViewSwitcher.switchTo(View.LISTI, lagalistar.get(i));
     }
 }

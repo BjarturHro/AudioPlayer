@@ -22,6 +22,7 @@ public class ListiController {
     private Button fxPlayPause;
     @FXML
     private ProgressBar fxProgressBar;
+    
     private Lagalisti listi;
     private Lag validLag;
     private MediaPlayer mediaPlayer;
@@ -84,7 +85,7 @@ public class ListiController {
      */
     public void onHeim(){
         mediaPlayer.stop();
-        ViewSwither.swithTo(View.HEIMA);
+        ViewSwitcher.switchTo(View.HEIMA);
     }
 
     public void onPlayPause(ActionEvent actionEvent) {

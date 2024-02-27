@@ -10,7 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.fxml.FXMLLoader;
 
-public class ViewSwither {
+public class ViewSwitcher {
     private static final Map<View, String> views = Map.of(
         View.HEIMA, "heima-view.fxml"
     );
@@ -18,16 +18,16 @@ public class ViewSwither {
     private static Scene scene;
     
     public static void setScene(Scene scene) {
-        ViewSwither.scene = scene;
+        ViewSwitcher.scene = scene;
     }
 
-    public static void swithTo(View view) {
+    public static void switchTo(View view) {
         try {
             Parent root;
             if (views.containsKey(view)) {
-                root = FXMLLoader.load(ViewSwither.class.getResource(views.get(view)));
+                root = FXMLLoader.load(ViewSwitcher.class.getResource(views.get(view)));
             } else {
-                root = FXMLLoader.load(ViewSwither.class.getResource(view.getFxml()));
+                root = FXMLLoader.load(ViewSwitcher.class.getResource(view.getFxml()));
             }
             scene.setRoot(root);
         } catch (IOException e) {
@@ -35,10 +35,10 @@ public class ViewSwither {
         }
     }
 
-    public static void swithTo(View view, Lagalisti lagalisti) {
+    public static void switchTo(View view, Lagalisti lagalisti) {
         try {
             Parent root;
-            FXMLLoader loader = new FXMLLoader(ViewSwither.class.getResource(view.getFxml()));
+            FXMLLoader loader = new FXMLLoader(ViewSwitcher.class.getResource(view.getFxml()));
             root = loader.load();
             ListiController listiController = loader.getController();
             listiController.setLagalisti(lagalisti);
