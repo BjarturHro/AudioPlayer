@@ -28,4 +28,9 @@ public class Lag {
     public String getMynd() {
         return mynd;
     }
+
+    @Override
+    public String toString() {
+        return lag;
+    }
 }

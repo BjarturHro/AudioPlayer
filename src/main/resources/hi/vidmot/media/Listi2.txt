@@ -1,0 +1,2 @@
+media/sample-12s.wav sample-12s 12000 media/mynd1.png
+media/sample-9s.wav sample-9s 9000 media/mynd2.png

@@ -15,6 +15,9 @@ public class PlayerApplication extends Application {
         ViewSwitcher.setScene(scene);
         ViewSwitcher.switchTo(View.HEIMA);
         stage.setScene(scene);
+        stage.setTitle("Tónlistarforrit");
+        stage.setWidth(800);
+        stage.setHeight(600);
         stage.show();
     }
 

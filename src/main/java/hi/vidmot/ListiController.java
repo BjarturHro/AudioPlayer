@@ -7,6 +7,9 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+
+import java.io.File;
+
 import hi.vinnsla.Lag;
 import hi.vinnsla.Lagalisti;
 import javafx.scene.media.Media;
@@ -50,6 +53,7 @@ public class ListiController {
      */
     public void onValidLag(MouseEvent mouseEvent) {
         validLag = fxListView.getSelectionModel().getSelectedItem();
+        System.out.println(validLag.getLag());
         //Image mynd = new Image(validLag.getMynd());
         //fxValidLagMynd.setImage(mynd);
         spilaLag(validLag);
@@ -62,9 +66,13 @@ public class ListiController {
      */
     private void spilaLag(Lag validLag) {
         System.out.println(validLag.getSkra());
-        Media media = new Media(getClass().getResource(validLag.getSkra()).toExternalForm());
+        File file = new File(getClass().getResource(validLag.getSkra()).getFile());
+        System.out.println(file.toURI().toString());
+        Media media = new Media(file.toURI().toString());
         setjaPlayer(media);
-        mediaPlayer.play();
+        if (mediaPlayer != null) {
+            mediaPlayer.play();
+        }
     }
 
     /**
@@ -76,15 +84,17 @@ public class ListiController {
             mediaPlayer.stop();
         }
         mediaPlayer = new MediaPlayer(media);
-        /*mediaPlayer.currentTimeProperty().addListener((observable, old, newValue) -> 
-        fxProgressBar.setProgress(newValue.divide(validLag.getLengd()).toMillis()));*/
+        mediaPlayer.currentTimeProperty().addListener((observable, old, newValue) -> 
+        fxProgressBar.setProgress(newValue.divide(Double.parseDouble(validLag.getLengd())).toMillis()));
     }
 
     /**
      * Sér um að fara heim þegar ýtt er á takka
      */
     public void onHeim(){
-        mediaPlayer.stop();
+        if (mediaPlayer != null) {
+            mediaPlayer.stop();
+        }
         ViewSwitcher.switchTo(View.HEIMA);
     }
 
